@@ -1,234 +1,190 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>Astros wallpaper</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astros Wallpapers</title>
 <style>
-body {
-    margin: 0;
-    overflow-x: hidden;
-    background: linear-gradient(to bottom, #000000 0%, #1a75ff 60%, #000000 100%);
-    font-family: Arial, sans-serif;
-}
+    body {
+        margin: 0;
+        background: linear-gradient(to bottom, #000000 0%, #1a75ff 60%, #000000 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        text-align: center;
+    }
 
-/* إضاءة خلفية */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle, rgba(0,150,255,0.15), transparent 60%);
-    animation: glowMove 10s infinite alternate;
-    z-index: 0;
-}
+    h1 {
+        color: #66ccff;
+        text-shadow: 0 0 10px #0099ff;
+        margin-top: 30px;
+    }
 
-@keyframes glowMove {
-    0% { transform: translate(-10%, -10%); }
-    100% { transform: translate(10%, 10%); }
-}
+    /* حاوية الشبكة */
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
 
-/* 🔥 Watermark */
-.watermark {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden;
-}
+    /* بطاقة الصورة */
+    .card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        transition: 0.3s;
+    }
 
-.watermark::before {
-    content: "Astros Wallpaper   Astros Wallpaper   Astros Wallpaper   Astros Wallpaper   Astros Wallpaper   Astros Wallpaper   Astros Wallpaper";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    font-size: 70px;
-    font-weight: bold;
-    color: rgba(255,255,255,0.12);
-    white-space: nowrap;
-    transform: rotate(-25deg);
-    line-height: 120px;
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px #00aaff;
+    }
 
-    /* 🔥 Glow */
-    text-shadow: 0 0 10px rgba(0,150,255,0.4);
+    .card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
 
-    animation: moveWM 25s linear infinite;
-}
+    /* أزرار التنزيل */
+    .btn {
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
 
-@keyframes moveWM {
-    0% { transform: translateX(-30%) rotate(-25deg); }
-    100% { transform: translateX(30%) rotate(-25deg); }
-}
+    .dl-single {
+        width: 100%;
+        padding: 8px;
+        background: #007bff;
+        color: white;
+    }
 
-/* المحتوى */
-.content {
-    position: relative;
-    z-index: 2;
-}
+    .dl-single:hover {
+        background: #00ffcc;
+        color: #000;
+    }
 
-h1 {
-    text-align: center;
-    margin-top: 20px;
-    color: #66ccff;
-    text-shadow: 0 0 10px #0099ff, 0 0 20px #0066ff;
-}
+    .dl-all {
+        padding: 15px 30px;
+        background: linear-gradient(45deg, #ff8c00, #ff0055);
+        color: white;
+        font-size: 18px;
+        margin: 20px 0;
+    }
 
-h2, h3 {
-    text-align: center;
-    color: white;
-}
-
-/* Grid */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 25px;
-}
-
-/* الصور */
-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: 0.4s;
-    box-shadow: 0 0 10px rgba(0,150,255,0.4);
-}
-
-img:hover {
-    transform: scale(1.07) translateY(-5px);
-    box-shadow: 0 0 20px #00aaff, 0 0 40px #0066ff;
-}
-
-/* الرابط */
-.main-link {
-    display: block;
-    text-align: center;
-    margin: 40px auto;
-    width: fit-content;
-    font-size: 34px;
-    font-weight: bold;
-    padding: 14px 24px;
-    color: white;
-    text-decoration: none;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 0 10px rgba(0,150,255,0.5);
-    transition: 0.3s;
-}
-
-.main-link:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 20px #00aaff, 0 0 40px #0066ff;
-}
+    .main-link {
+        display: inline-block;
+        margin: 40px 0;
+        color: #66ccff;
+        text-decoration: none;
+    }
 </style>
 </head>
-
 <body>
 
-<div class="watermark"></div>
+    <h1>Astros Wallpapers</h1>
+    
+    <!-- زر تحميل الكل -->
+    <button class="btn dl-all" id="downloadAll">📥 تحميل جميع الصور للجهاز</button>
 
-<div class="content">
+    <div class="container" id="gallery">
+        <!-- سيتم توليد الصور هنا عبر السكريبت -->
+    </div>
 
-<h1>Astros wallpaper</h1>
-<h2>App of wallpaper</h2>
-<h3>رابط القناة في اخر الصفحة</h3>
+    <a href="https://t.me" class="main-link">انضم لقناتنا على تيليجرام 🔗</a>
 
-<div class="container">
+<script>
+    // قائمة روابط الصور الخاصة بك
+    const imageUrls = [
+        "https://i.postimg.cc/4x2wMGxg/1-(1).jpg", "https://i.postimg.cc/TwkQgX5Q/1-(2).jpg",
+        "https://i.postimg.cc/PJpbDvkM/1-(3).jpg", "https://i.postimg.cc/k4ZK7MtW/1-(4).jpg",
+        "https://i.postimg.cc/FKTjtwmR/1-(5).jpg", "https://i.postimg.cc/BZL2yhzM/1-(6).jpg",
+        "https://i.postimg.cc/XvYCgxFj/1-(7).jpg", "https://i.postimg.cc/ZR3KPyf0/1-(8).jpg",
+        "https://i.postimg.cc/fRLz2PHF/1-(9).jpg", "https://i.postimg.cc/JnbMHCnG/1-(10).jpg",
+        "https://i.postimg.cc/bwsPHtrd/1-(11).jpg", "https://i.postimg.cc/j5QYd6gN/1-(12).jpg",
+        "https://i.postimg.cc/XvdTQcbr/1-(13).jpg", "https://i.postimg.cc/SRT5JgWC/1-(14).jpg",
+        "https://i.postimg.cc/x1b71yqy/1-(15).jpg", "https://i.postimg.cc/xC7pQXY3/1-(16).jpg",
+        "https://i.postimg.cc/fTYq4WPC/1-(17).jpg", "https://i.postimg.cc/9M41LcTp/1-(18).jpg",
+        "https://i.postimg.cc/fT7C2231/1-(19).jpg", "https://i.postimg.cc/mgXQJ0T8/1-(20).jpg",
+        "https://i.postimg.cc/0yQSYc7z/1-(21).jpg", "https://i.postimg.cc/nr2s7Dz7/1-(22).jpg",
+        "https://i.postimg.cc/d1mDPyGx/1-(23).jpg", "https://i.postimg.cc/4NMf05rH/1-(24).jpg",
+        "https://i.postimg.cc/k4f9vFQg/1-(25).jpg", "https://i.postimg.cc/DzhTVY5V/1-(26).jpg",
+        "https://i.postimg.cc/QCw2f6Hj/1-(27).jpg", "https://i.postimg.cc/NjcsYMjc/1-(28).jpg",
+        "https://i.postimg.cc/NG2BHTyj/1-(29).jpg", "https://i.postimg.cc/7ZwkdWK2/1-(30).jpg",
+        "https://i.postimg.cc/zXD7Qwny/1-(31).jpg", "https://i.postimg.cc/zBSwt3vb/1-(32).jpg",
+        "https://i.postimg.cc/X7vKLj0R/1-(33).jpg", "https://i.postimg.cc/fR99qkqG/1-(35).jpg",
+        "https://i.postimg.cc/SNX2jJ4n/1-(36).jpg", "https://i.postimg.cc/LXC58M0V/1-(37).jpg",
+        "https://i.postimg.cc/PNGtCfb2/1-(38).jpg", "https://i.postimg.cc/tgRVqD4j/1-(39).jpg",
+        "https://i.postimg.cc/632qqPsk/1-(40).jpg", "https://i.postimg.cc/7ZKZV4wp/1-(42).jpg",
+        "https://i.postimg.cc/KvrPm1D1/1-(43).jpg", "https://i.postimg.cc/sf5SJMq1/1-(44).jpg",
+        "https://i.postimg.cc/5NxHqn8Q/1-(45).jpg", "https://i.postimg.cc/d121Gy1p/1-(46).jpg",
+        "https://i.postimg.cc/yYYdSWzZ/1-(47).jpg", "https://i.postimg.cc/44w4ZZh7/1-(48).jpg",
+        "https://i.postimg.cc/J0hLtDBn/1-(49).jpg", "https://i.postimg.cc/DwrMkf8j/1-(50).jpg",
+        "https://i.postimg.cc/sXqkf6sV/1-(53).jpg", "https://i.postimg.cc/NjBW0rqY/1-(54).jpg",
+        "https://i.postimg.cc/rpdgy8m4/1-(55).jpg", "https://i.postimg.cc/dV3jnqG6/1-(56).jpg",
+        "https://i.postimg.cc/Y0t1Fkpf/1-(57).jpg", "https://i.postimg.cc/8z7LMZVm/1-(58).jpg",
+        "https://i.postimg.cc/xdHHFq8q/1-(59).jpg", "https://i.postimg.cc/gjM66ZSs/1-(60).jpg",
+        "https://i.postimg.cc/C5KRYKh6/1-(61).jpg", "https://i.postimg.cc/yYtD4BwL/1-(62).jpg",
+        "https://i.postimg.cc/76H6MLTR/1-(63).jpg", "https://i.postimg.cc/yYgNTtkx/1-(64).jpg",
+        "https://i.postimg.cc/HsVrhjPV/1-(65).jpg", "https://i.postimg.cc/6Q9wFm5D/1-(66).jpg",
+        "https://i.postimg.cc/NjbfGcnJ/1-(67).jpg", "https://i.postimg.cc/7hgwF80y/1-(68).jpg",
+        "https://i.postimg.cc/mD9s9fmv/1-(70).jpg", "https://i.postimg.cc/DfSDPjWH/1-(71).jpg",
+        "https://i.postimg.cc/VvtKQhnJ/1-(72).jpg", "https://i.postimg.cc/QxpffRj7/1-(73).jpg",
+        "https://i.postimg.cc/j5wXP18X/1-(74).jpg", "https://i.postimg.cc/9QmYJ08M/1-(75).jpg",
+        "https://i.postimg.cc/jdZ7qXX9/1-(76).jpg", "https://i.postimg.cc/HL7c2CgY/1-(77).jpg",
+        "https://i.postimg.cc/7635FMbw/1-(80).jpg", "https://i.postimg.cc/br6wP6hM/1-(81).jpg",
+        "https://i.postimg.cc/jdmRhndn/photo-2026-04-21-06-29-28.jpg",
+        "https://i.postimg.cc/504JtwpD/photo-2026-04-21-06-29-35.jpg",
+        "https://i.postimg.cc/B6m0PXVm/photo-2026-04-21-06-29-36.jpg",
+        "https://i.postimg.cc/SRcxsLpQ/photo-2026-04-22-06-33-42.jpg",
+        "https://i.postimg.cc/hPt1R4k1/photo-2026-04-23-19-54-40.jpg",
+        "https://i.postimg.cc/WzbgVSH7/photo-2026-04-23-19-54-41.jpg",
+        "https://i.postimg.cc/NfFmPJTf/photo-2026-04-23-19-54-42.jpg",
+        "https://i.postimg.cc/m2PnrdCq/photo-2026-04-25-11-10-31.jpg",
+        "https://i.postimg.cc/GtWxtj1n/photo-2026-04-25-11-10-36.jpg",
+        "https://i.postimg.cc/vZdCSr6d/photo-2026-04-25-11-10-37.jpg",
+        "https://i.postimg.cc/JhCxYfcd/IMG-20260425-151852-122.jpg"
+    ];
 
-<!-- كل الصور -->
-<img src="https://i.postimg.cc/4x2wMGxg/1-(1).jpg"/>
-<img src="https://i.postimg.cc/TwkQgX5Q/1-(2).jpg"/>
-<img src="https://i.postimg.cc/PJpbDvkM/1-(3).jpg"/>
-<img src="https://i.postimg.cc/k4ZK7MtW/1-(4).jpg"/>
-<img src="https://i.postimg.cc/FKTjtwmR/1-(5).jpg"/>
-<img src="https://i.postimg.cc/BZL2yhzM/1-(6).jpg"/>
-<img src="https://i.postimg.cc/XvYCgxFj/1-(7).jpg"/>
-<img src="https://i.postimg.cc/ZR3KPyf0/1-(8).jpg"/>
-<img src="https://i.postimg.cc/fRLz2PHF/1-(9).jpg"/>
-<img src="https://i.postimg.cc/JnbMHCnG/1-(10).jpg"/>
-<img src="https://i.postimg.cc/bwsPHtrd/1-(11).jpg"/>
-<img src="https://i.postimg.cc/j5QYd6gN/1-(12).jpg"/>
-<img src="https://i.postimg.cc/XvdTQcbr/1-(13).jpg"/>
-<img src="https://i.postimg.cc/SRT5JgWC/1-(14).jpg"/>
-<img src="https://i.postimg.cc/x1b71yqy/1-(15).jpg"/>
-<img src="https://i.postimg.cc/xC7pQXY3/1-(16).jpg"/>
-<img src="https://i.postimg.cc/fTYq4WPC/1-(17).jpg"/>
-<img src="https://i.postimg.cc/9M41LcTp/1-(18).jpg"/>
-<img src="https://i.postimg.cc/fT7C2231/1-(19).jpg"/>
-<img src="https://i.postimg.cc/mgXQJ0T8/1-(20).jpg"/>
-<img src="https://i.postimg.cc/0yQSYc7z/1-(21).jpg"/>
-<img src="https://i.postimg.cc/nr2s7Dz7/1-(22).jpg"/>
-<img src="https://i.postimg.cc/d1mDPyGx/1-(23).jpg"/>
-<img src="https://i.postimg.cc/4NMf05rH/1-(24).jpg"/>
-<img src="https://i.postimg.cc/k4f9vFQg/1-(25).jpg"/>
-<img src="https://i.postimg.cc/DzhTVY5V/1-(26).jpg"/>
-<img src="https://i.postimg.cc/QCw2f6Hj/1-(27).jpg"/>
-<img src="https://i.postimg.cc/NjcsYMjc/1-(28).jpg"/>
-<img src="https://i.postimg.cc/NG2BHTyj/1-(29).jpg"/>
-<img src="https://i.postimg.cc/7ZwkdWK2/1-(30).jpg"/>
-<img src="https://i.postimg.cc/zXD7Qwny/1-(31).jpg"/>
-<img src="https://i.postimg.cc/zBSwt3vb/1-(32).jpg"/>
-<img src="https://i.postimg.cc/X7vKLj0R/1-(33).jpg"/>
-<img src="https://i.postimg.cc/fR99qkqG/1-(35).jpg"/>
-<img src="https://i.postimg.cc/SNX2jJ4n/1-(36).jpg"/>
-<img src="https://i.postimg.cc/LXC58M0V/1-(37).jpg"/>
-<img src="https://i.postimg.cc/PNGtCfb2/1-(38).jpg"/>
-<img src="https://i.postimg.cc/tgRVqD4j/1-(39).jpg"/>
-<img src="https://i.postimg.cc/632qqPsk/1-(40).jpg"/>
-<img src="https://i.postimg.cc/7ZKZV4wp/1-(42).jpg"/>
-<img src="https://i.postimg.cc/KvrPm1D1/1-(43).jpg"/>
-<img src="https://i.postimg.cc/sf5SJMq1/1-(44).jpg"/>
-<img src="https://i.postimg.cc/5NxHqn8Q/1-(45).jpg"/>
-<img src="https://i.postimg.cc/d121Gy1p/1-(46).jpg"/>
-<img src="https://i.postimg.cc/yYYdSWzZ/1-(47).jpg"/>
-<img src="https://i.postimg.cc/44w4ZZh7/1-(48).jpg"/>
-<img src="https://i.postimg.cc/J0hLtDBn/1-(49).jpg"/>
-<img src="https://i.postimg.cc/DwrMkf8j/1-(50).jpg"/>
-<img src="https://i.postimg.cc/sXqkf6sV/1-(53).jpg"/>
-<img src="https://i.postimg.cc/NjBW0rqY/1-(54).jpg"/>
-<img src="https://i.postimg.cc/rpdgy8m4/1-(55).jpg"/>
-<img src="https://i.postimg.cc/dV3jnqG6/1-(56).jpg"/>
-<img src="https://i.postimg.cc/Y0t1Fkpf/1-(57).jpg"/>
-<img src="https://i.postimg.cc/8z7LMZVm/1-(58).jpg"/>
-<img src="https://i.postimg.cc/xdHHFq8q/1-(59).jpg"/>
-<img src="https://i.postimg.cc/gjM66ZSs/1-(60).jpg"/>
-<img src="https://i.postimg.cc/C5KRYKh6/1-(61).jpg"/>
-<img src="https://i.postimg.cc/yYtD4BwL/1-(62).jpg"/>
-<img src="https://i.postimg.cc/76H6MLTR/1-(63).jpg"/>
-<img src="https://i.postimg.cc/yYgNTtkx/1-(64).jpg"/>
-<img src="https://i.postimg.cc/HsVrhjPV/1-(65).jpg"/>
-<img src="https://i.postimg.cc/6Q9wFm5D/1-(66).jpg"/>
-<img src="https://i.postimg.cc/NjbfGcnJ/1-(67).jpg"/>
-<img src="https://i.postimg.cc/7hgwF80y/1-(68).jpg"/>
-<img src="https://i.postimg.cc/mD9s9fmv/1-(70).jpg"/>
-<img src="https://i.postimg.cc/DfSDPjWH/1-(71).jpg"/>
-<img src="https://i.postimg.cc/VvtKQhnJ/1-(72).jpg"/>
-<img src="https://i.postimg.cc/QxpffRj7/1-(73).jpg"/>
-<img src="https://i.postimg.cc/j5wXP18X/1-(74).jpg"/>
-<img src="https://i.postimg.cc/9QmYJ08M/1-(75).jpg"/>
-<img src="https://i.postimg.cc/jdZ7qXX9/1-(76).jpg"/>
-<img src="https://i.postimg.cc/HL7c2CgY/1-(77).jpg"/>
-<img src="https://i.postimg.cc/7635FMbw/1-(80).jpg"/>
-<img src="https://i.postimg.cc/br6wP6hM/1-(81).jpg"/>
-<img src="https://i.postimg.cc/jdmRhndn/photo-2026-04-21-06-29-28.jpg"/>
-<img src="https://i.postimg.cc/504JtwpD/photo-2026-04-21-06-29-35.jpg"/>
-<img src="https://i.postimg.cc/B6m0PXVm/photo-2026-04-21-06-29-36.jpg"/>
-<img src="https://i.postimg.cc/SRcxsLpQ/photo-2026-04-22-06-33-42.jpg"/>
-<img src="https://i.postimg.cc/hPt1R4k1/photo-2026-04-23-19-54-40.jpg"/>
-<img src="https://i.postimg.cc/WzbgVSH7/photo-2026-04-23-19-54-41.jpg"/>
-<img src="https://i.postimg.cc/NfFmPJTf/photo-2026-04-23-19-54-42.jpg"/>
-<img src="https://i.postimg.cc/m2PnrdCq/photo-2026-04-25-11-10-31.jpg"/>
-<img src="https://i.postimg.cc/GtWxtj1n/photo-2026-04-25-11-10-36.jpg"/>
-<img src="https://i.postimg.cc/vZdCSr6d/photo-2026-04-25-11-10-37.jpg"/>
-<img src="https://i.postimg.cc/JhCxYfcd/IMG-20260425-151852-122.jpg"/>
-</div>
+    const gallery = document.getElementById('gallery');
 
-<a href="https://t.me/aannddff654" class="main-link">
-ده رابط القناة يا جماعة
-</a>
+    // وظيفة لتحميل صورة واحدة
+    async function downloadImg(url, filename) {
+        try {
+            const res = await fetch(url);
+            const blob = await res.blob();
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            a.click();
+        } catch(e) { alert("حدث خطأ في التنزيل"); }
+    }
 
-</div>
+    // بناء الشبكة
+    imageUrls.forEach((url, i) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <img src="${url}" loading="lazy">
+            <button class="btn dl-single" onclick="downloadImg('${url}', 'Astros_${i+1}.jpg')">تنزيل 📥</button>
+        `;
+        gallery.appendChild(card);
+    });
 
+    // تحميل الكل
+    document.getElementById('downloadAll').onclick = async function() {
+        if(!confirm("سيتم تحميل " + imageUrls.length + " صورة، هل تود الاستمرار؟")) return;
+        for(let i=0; i<imageUrls.length; i++) {
+            await downloadImg(imageUrls[i], `Astros_${i+1}.jpg`);
+            await new Promise(r => setTimeout(r, 500)); // تأخير بسيط لتجنب تعليق المتصفح
+        }
+    };
+</script>
 </body>
 </html>
