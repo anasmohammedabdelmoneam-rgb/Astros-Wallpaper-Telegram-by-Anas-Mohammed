@@ -34,34 +34,6 @@
     box-shadow: 0 0 20px #00aaff, 0 0 40px #0066ff;
 
 }
-.watermark {
-    position: fixed;
-    inset: 0;
-    z-index: 0; /* 🔥 خلف كل شيء */
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.watermark span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    font-size: 60px;
-    font-weight: bold;
-    color: rgba(255,255,255,0.18);
-    white-space: pre;
-    line-height: 120px;
-    transform: rotate(-25deg);
-    text-shadow: 0 0 10px #00aaff;
-    animation: wmLoop 18s linear infinite;
-}
-
-@keyframes wmLoop {
-    0% { transform: translate(0,0) rotate(-25deg); }
-    100% { transform: translate(-50%,-50%) rotate(-25deg); }
-}
 
 
 
@@ -145,15 +117,7 @@ h1 {
 
 
 <body>
-<!-- 🔥 Watermark -->
-<div class="watermark">
-<span>
-Astros Wallpaper Astros Wallpaper Astros Wallpaper Astros Wallpaper
-Astros Wallpaper Astros Wallpaper Astros Wallpaper Astros Wallpaper
-Astros Wallpaper Astros Wallpaper Astros Wallpaper Astros Wallpaper
-Astros Wallpaper Astros Wallpaper Astros Wallpaper Astros Wallpaper
-</span>
-</div>
+
 
 
     <h1>Astros Wallpapers</h1>
