@@ -13,6 +13,27 @@
         text-align: center;
         min-height: 100vh;
     }
+/* أضفه في أي مكان داخل <style> */
+.btn-surprise {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #00ffcc, #00aaff);
+    border-radius: 15px;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid white;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+    position: relative;
+    z-index: 10;
+}
+.btn-surprise:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 25px #00ffcc;
+}
+
 
     /* 🔥 العلامة المائية - نسخة أكثر وضوحاً */
     .watermark-container {
@@ -215,7 +236,11 @@
         </div>
     </div>
 
-    <h1>Astros Wallpapers</h1>
+<!-- ابحث عن h1 في كودك وضع هذا تحته -->
+<h1>Astros Wallpapers</h1>
+<button id="surpriseBtn" class="btn-surprise">🎲 فاجئني بخلفية عشوائية</button>
+<button id="downloadAll">📥 تحميل جميع الصور</button>
+
       <h2>رابط في أخر القناة</h2>
 <h3>لاحلى ناس</h3>
     
@@ -326,6 +351,41 @@
             }, index * 200); // تأخير بسيط لتجنب حظر المتصفح
         });
     };
+// ضعه في نهاية قسم السكريبت
+document.getElementById('surpriseBtn').onclick = () => {
+
+    const randomUrl =
+    imageUrls[Math.floor(Math.random() * imageUrls.length)];
+
+    // إنشاء الخلفية السوداء
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.background = 'rgba(0,0,0,0.95)';
+    overlay.style.display = 'flex';
+    overlay.style.justifyContent = 'center';
+    overlay.style.alignItems = 'center';
+    overlay.style.zIndex = '99999';
+
+    // الصورة
+    const img = document.createElement('img');
+    img.src = randomUrl;
+    img.style.maxWidth = '95%';
+    img.style.maxHeight = '95%';
+    img.style.borderRadius = '20px';
+    img.style.boxShadow = '0 0 40px #00aaff';
+
+    // إغلاق عند الضغط
+    overlay.onclick = () => {
+        overlay.remove();
+    };
+
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+};
 </script>
 </body>
 </html>
