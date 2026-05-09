@@ -357,7 +357,7 @@ document.getElementById('surpriseBtn').onclick = () => {
     const randomUrl =
     imageUrls[Math.floor(Math.random() * imageUrls.length)];
 
-    // إنشاء الخلفية السوداء
+    // الخلفية السوداء
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
     overlay.style.top = '0';
@@ -366,24 +366,78 @@ document.getElementById('surpriseBtn').onclick = () => {
     overlay.style.height = '100%';
     overlay.style.background = 'rgba(0,0,0,0.95)';
     overlay.style.display = 'flex';
+    overlay.style.flexDirection = 'column';
     overlay.style.justifyContent = 'center';
     overlay.style.alignItems = 'center';
     overlay.style.zIndex = '99999';
+    overlay.style.padding = '20px';
 
     // الصورة
     const img = document.createElement('img');
     img.src = randomUrl;
     img.style.maxWidth = '95%';
-    img.style.maxHeight = '95%';
+    img.style.maxHeight = '80%';
     img.style.borderRadius = '20px';
     img.style.boxShadow = '0 0 40px #00aaff';
+    img.style.marginBottom = '20px';
 
-    // إغلاق عند الضغط
-    overlay.onclick = () => {
+    // زر التنزيل
+    const downloadBtn = document.createElement('button');
+    downloadBtn.innerText = '📥 تنزيل الخلفية';
+    downloadBtn.style.padding = '15px 30px';
+    downloadBtn.style.border = 'none';
+    downloadBtn.style.borderRadius = '15px';
+    downloadBtn.style.background =
+    'linear-gradient(45deg,#00aaff,#00ffcc)';
+    downloadBtn.style.color = '#000';
+    downloadBtn.style.fontSize = '18px';
+    downloadBtn.style.fontWeight = 'bold';
+    downloadBtn.style.cursor = 'pointer';
+    downloadBtn.style.boxShadow = '0 0 20px #00aaff';
+    downloadBtn.style.marginBottom = '15px';
+
+    // التنزيل
+    downloadBtn.onclick = async (e) => {
+        e.stopPropagation();
+
+        try {
+            const res = await fetch(randomUrl);
+            const blob = await res.blob();
+
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Astros-Random-Wallpaper.jpg';
+
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+        } catch(err) {
+            window.open(randomUrl, '_blank');
+        }
+    };
+
+    // زر الإغلاق
+    const closeBtn = document.createElement('button');
+    closeBtn.innerText = '✖ إغلاق';
+    closeBtn.style.padding = '12px 25px';
+    closeBtn.style.border = 'none';
+    closeBtn.style.borderRadius = '12px';
+    closeBtn.style.background = '#ff0033';
+    closeBtn.style.color = 'white';
+    closeBtn.style.fontSize = '16px';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.boxShadow = '0 0 15px red';
+
+    closeBtn.onclick = (e) => {
+        e.stopPropagation();
         overlay.remove();
     };
 
     overlay.appendChild(img);
+    overlay.appendChild(downloadBtn);
+    overlay.appendChild(closeBtn);
+
     document.body.appendChild(overlay);
 };
 </script>
