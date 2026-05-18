@@ -222,6 +222,20 @@
     50% { box-shadow: 0 0 40px rgba(0, 170, 255, 1), 0 0 60px rgba(0, 170, 255, 0.6); }
     100% { box-shadow: 0 0 20px rgba(0, 170, 255, 0.8); }
 }
+.header-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row-reverse;
+}
+.header-icon {
+    width: 70px;   /* صغر الحجم هنا */
+    height: 70px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 0 15px #00aaff;
+}
 </style>
 </head>
 <body>
@@ -237,7 +251,11 @@
     </div>
 
 <!-- ابحث عن h1 في كودك وضع هذا تحته -->
-<h1>Astros Wallpapers</h1>
+<div class="header-box">
+    <img src="https://i.postimg.cc/Nf5fCTsB/photo-2026-05-18-13-43-36.jpg" class="header-icon" alt="Icon">
+    <h1>Astros Wallpapers</h1>
+</div>
+
       <h2>رابط في أخر القناة</h2>
 <h3>لاحلى ناس</h3>
     <button id="surpriseBtn" class="btn-surprise">🎲 فاجئني بخلفية عشوائية</button>
