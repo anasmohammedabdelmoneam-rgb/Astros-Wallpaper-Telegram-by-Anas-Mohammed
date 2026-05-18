@@ -362,45 +362,7 @@ imageUrls.forEach((url,index)=>{
     onclick="downloadImg('${url}','Astros-Wall-${index+1}.jpg')">
     تنزيل 📥
     </button>
-      // زر التنزيل
-    const downloadBtn = document.createElement('button');
-    downloadBtn.innerText = '📥 تنزيل الخلفية';
-    downloadBtn.style.padding = '15px 30px';
-    downloadBtn.style.border = 'none';
-    downloadBtn.style.borderRadius = '15px';
-    downloadBtn.style.background =
-    'linear-gradient(45deg,#00aaff,#00ffcc)';
-    downloadBtn.style.color = '#000';
-    downloadBtn.style.fontSize = '18px';
-    downloadBtn.style.fontWeight = 'bold';
-    downloadBtn.style.cursor = 'pointer';
-    downloadBtn.style.boxShadow = '0 0 20px #00aaff';
-    downloadBtn.style.marginBottom = '15px';
-
-    // التنزيل
-    downloadBtn.onclick = async (e) => {
-        e.stopPropagation();
-
-        try {
-            const res = await fetch(randomUrl);
-            const blob = await res.blob();
-
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'Astros-Random-Wallpaper.jpg';
-
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-
-        } catch(err) {
-            window.open(randomUrl, '_blank');
-        }
-    };
-
-
-
-    `;
+    
 
     gallery.appendChild(card);
 
