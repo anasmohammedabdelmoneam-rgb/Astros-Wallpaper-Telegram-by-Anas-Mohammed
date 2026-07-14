@@ -1,272 +1,488 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
 <title>Astros Wallpapers</title>
+
 <style>
-    body {
-        margin: 0;
-        background: linear-gradient(to bottom, #000000 0%, #1a75ff 60%, #000000 100%);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: white;
-        text-align: center;
-        min-height: 100vh;
-    }
-/* أضفه في أي مكان داخل <style> */
-.btn-surprise {
-    padding: 15px 30px;
-    background: linear-gradient(45deg, #00ffcc, #00aaff);
-    border-radius: 15px;
-    color: #000;
-    font-weight: bold;
-    font-size: 18px;
-    border: 2px solid white;
-    cursor: pointer;
-    margin: 10px;
-    transition: 0.3s;
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-    position: relative;
-    z-index: 10;
-}
-.btn-surprise:hover {
-    transform: scale(1.1) rotate(-2deg);
-    box-shadow: 0 0 25px #00ffcc;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
+body{
 
-    /* 🔥 العلامة المائية - نسخة أكثر وضوحاً */
-    .watermark-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        pointer-events: none;
-        overflow: hidden;
-    }
+font-family:Segoe UI,sans-serif;
 
-    .watermark-text {
-        position: absolute;
-        width: 300%;
-        height: 300%;
-        font-size: 85px; /* تكبير الخط */
-        font-weight: 900; /* جعل الخط عريض جداً */
-        color: rgba(255, 255, 255, 0.25); /* زيادة الشفافية لتكون أوضح */
-        transform: rotate(-25deg);
-        white-space: pre;
-        line-height: 160px; /* تقليل المسافة بين السطور */
-        top: -50%;
-        left: -50%;
-        
-        /* تقوية التوهج الأزرق ليميز النص عن الخلفية */
-        text-shadow: 0 0 20px rgba(0, 150, 255, 0.8), 0 0 40px rgba(0, 100, 255, 0.4);
-        
-        animation: moveWM 20s linear infinite; /* تسريع الحركة قليلاً */
-    }
+background:
+linear-gradient(
+180deg,
+#000 0%,
+#1768ff 60%,
+#000 100%
+);
 
-    @keyframes moveWM {
-        0% { transform: translate(0, 0) rotate(-25deg); }
-        100% { transform: translate(150px, 150px) rotate(-25deg); }
-    }
+color:#fff;
 
-    /* ضمان ظهور المحتوى فوق العلامة المائية */
-    h1, .container, .main-link, .btn {
-        position: relative;
-        z-index: 10;
-    }
+text-align:center;
 
-    h1 {
-        margin-top: 20px;
-        color: #66ccff;
-        text-shadow: 0 0 10px #0099ff;
-   h2 }
-    /* ضمان ظهور المحتوى فوق العلامة المائية */
-    h2, .container, .main-link, .btn {
-        position: relative;
-        z-index: 10;
-    }
+min-height:100vh;
 
-    h2 {
-        margin-top: 20px;
-        color: #66ccff;
-        text-shadow: 0 0 10px #0099ff;
-   h3 }
+overflow-x:hidden;
 
-  /* ضمان ظهور المحتوى فوق العلامة المائية */
-    h2, .container, .main-link, .btn {
-        position: relative;
-        z-index: 10;
-    }
-
-   h3 {
-        margin-top: 20px;
-        color: #66ccff;
-        text-shadow: 0 0 10px #0099ff;
-    }
-
-    .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .card {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        padding: 10px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        transition: 0.3s;
-        backdrop-filter: blur(5px); /* تأثير زجاجي */
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 20px #00aaff;
-    }
-
-    .card img {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-
-    .btn {
-        cursor: pointer;
-        border: none;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-       .dl-single {
-        width: 100%;
-        padding: 10px;
-        background: #007bff;
-        color: white;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-        animation: pulseButton 2.5s infinite; /* حركة النبض */
-    }
-
-    .dl-single:hover {
-        background: #00ffcc;
-        color: #000;
-        transform: scale(1.05);
-        animation: none; /* إيقاف النبض عند وضع الفأرة للتركيز */
-        box-shadow: 0 0 20px #00ffcc;
-    }
-
-    /* حركة النبض للأزرار الفردية */
-    @keyframes pulseButton {
-        0% { 
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-            transform: scale(1);
-        }
-        50% { 
-            box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.4);
-            transform: scale(1.02); /* تكبير خفيف جداً */
-        }
-        100% { 
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-            transform: scale(1);
-        }
-    }
-
-    .dl-all {
-        padding: 15px 30px;
-        background: linear-gradient(45deg, #ff8c00, #ff0055);
-        color: white;
-        font-size: 18px;
-        margin: 20px 0;
-    }
-
-/* 🔥 تحديث زر الرابط ليكون أكثر وضوحاً */
-.main-link {
-    display: block;
-    text-align: center;
-    margin: 60px auto;
-    width: fit-content;
-    font-size: 32px; /* تكبير الخط */
-    font-weight: 900;
-    padding: 20px 40px;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px; /* زوايا مستديرة بالكامل */
-    
-    /* خلفية متدرجة قوية */
-    background: linear-gradient(45deg, #0088cc, #00aaff);
-    
-    /* حدود وتوهج نيوني */
-    border: 3px solid #fff;
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.5);
-    
-    transition: all 0.4s ease-in-out;
-    animation: pulseGlow 2s infinite; /* إضافة حركة نبض */
 }
 
-.main-link:hover {
-    transform: scale(1.15) rotate(2deg); /* تكبير وميلان خفيف عند المرور */
-    background: #fff;
-    color: #0088cc;
-    box-shadow: 0 0 40px #00aaff, 0 0 60px #0088cc;
+.watermark-container{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:0;
+
 }
 
-/* حركة النبض لجذب العين */
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 20px rgba(0, 170, 255, 0.8); }
-    50% { box-shadow: 0 0 40px rgba(0, 170, 255, 1), 0 0 60px rgba(0, 170, 255, 0.6); }
-    100% { box-shadow: 0 0 20px rgba(0, 170, 255, 0.8); }
+.watermark-text{
+
+position:absolute;
+
+width:300%;
+
+height:300%;
+
+top:-50%;
+
+left:-50%;
+
+font-size:90px;
+
+font-weight:900;
+
+line-height:170px;
+
+white-space:pre;
+
+color:rgba(255,255,255,.12);
+
+transform:rotate(-25deg);
+
+animation:move 18s linear infinite;
+
 }
-.header-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-direction: row-reverse;
+
+@keyframes move{
+
+from{
+
+transform:
+translate(0,0)
+rotate(-25deg);
+
 }
-.header-icon {
-    width: 70px;   /* صغر الحجم هنا */
-    height: 70px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 0 15px #00aaff;
+
+to{
+
+transform:
+translate(150px,150px)
+rotate(-25deg);
+
 }
+
+}
+
+.header-box{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+margin-top:25px;
+
+position:relative;
+
+z-index:10;
+
+}
+
+.header-icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:18px;
+
+box-shadow:0 0 18px #00aaff;
+
+}
+
+h1{
+
+font-size:46px;
+
+color:#7cc7ff;
+
+text-shadow:0 0 18px #00aaff;
+
+}
+
+h2,h3{
+
+margin-top:15px;
+
+color:#80cfff;
+
+position:relative;
+
+z-index:10;
+
+}
+
+.container{
+
+position:relative;
+
+z-index:10;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fill,minmax(170px,1fr));
+
+gap:20px;
+
+padding:25px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.1);
+
+border-radius:18px;
+
+padding:10px;
+
+backdrop-filter:blur(8px);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 20px #00aaff;
+
+}
+
+.card img{
+
+width:100%;
+
+height:240px;
+
+border-radius:12px;
+
+object-fit:cover;
+
+cursor:pointer;
+
+}
+
+.btn{
+
+width:100%;
+
+margin-top:10px;
+
+padding:12px;
+
+border:none;
+
+border-radius:12px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.preview{
+
+background:#00d2ff;
+
+color:#000;
+
+}
+
+.download{
+
+background:#0066ff;
+
+color:#fff;
+
+}
+
+/* ===== iPhone Mockup ===== */
+
+.mockup{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.93);
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:999999;
+
+}
+
+.phone{
+    position:relative;
+    width:360px;
+    aspect-ratio:1024/1536;
+}
+
+.screen{
+    position:absolute;
+
+    left:65px;
+    top:42px;
+
+    width:230px;
+    height:450px;
+
+    overflow:hidden;
+
+    border-radius:36px;
+
+    z-index:1;
+}
+
+.wallpaper{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.frame{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:2;
+
+    pointer-events:none;
+}
+.mockup-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+.mockup-buttons button{
+
+padding:14px 28px;
+
+border:none;
+
+border-radius:15px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.closeBtn{
+
+background:#ff2d55;
+
+color:#fff;
+
+}
+
+.downloadBtn{
+
+background:#00d084;
+
+color:#000;
+
+}
+
+.surprise{
+
+background:linear-gradient(45deg,#00e5ff,#00b0ff);
+
+color:#000;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+margin:20px;
+
+}
+
+.telegram{
+
+display:inline-block;
+
+margin:40px;
+
+padding:18px 35px;
+
+border-radius:50px;
+
+background:#1da1f2;
+
+color:#fff;
+
+text-decoration:none;
+
+font-size:28px;
+
+font-weight:bold;
+
+box-shadow:0 0 25px #1da1f2;
+
+}
+
 </style>
+
 </head>
+
 <body>
 
-     <div class="watermark-container">
-        <div class="watermark-text">
-            Astros Wallpaper    Astros Wallpaper    Astros Wallpaper
-            Astros Wallpaper    Astros Wallpaper    Astros Wallpaper
-            Astros Wallpaper    Astros Wallpaper    Astros Wallpaper
-            Astros Wallpaper    Astros Wallpaper    Astros Wallpaper
-            Astros Wallpaper    Astros Wallpaper    Astros Wallpaper
-        </div>
-    </div>
+<div class="watermark-container">
 
-<!-- ابحث عن h1 في كودك وضع هذا تحته -->
-<div class="header-box">
-    <img src="https://i.postimg.cc/Nf5fCTsB/photo-2026-05-18-13-43-36.jpg" class="header-icon" alt="Icon">
-    <h1>Astros Wallpapers</h1>
+<div class="watermark-text">
+
+Astros Wallpaper Astros Wallpaper Astros Wallpaper Astros Wallpaper
+
+Astros Wallpaper Astros Wallpaper Astros Wallpaper Astros Wallpaper
+
+Astros Wallpaper Astros Wallpaper Astros Wallpaper Astros Wallpaper
+
 </div>
 
-      <h2>رابط في ألاخر للقناة</h2>
-<h3>لاحلى ناس</h3>
-    <button id="surpriseBtn" class="btn-surprise">🎲 فاجئني بخلفية عشوائية</button>
-    <button class="btn dl-all" id="downloadAll">📥 تحميل جميع الصور للجهاز</button>
+</div>
 
-    <div class="container" id="gallery"></div>
+<div class="header-box">
 
-    <a href="https://t.me/Anasorutb32" class="main-link">انضم لقناتنا على تيليجرام 🔗</a>
+<img class="header-icon"
+
+src="https://i.postimg.cc/Nf5fCTsB/photo-2026-05-18-13-43-36.jpg">
+
+<h1>Astros Wallpapers</h1>
+
+</div>
+
+<h2>رابط في الآخر للقناة</h2>
+
+<h3>لأحلى ناس ❤️</h3>
+
+<button id="surpriseBtn" class="surprise">
+
+🎲 فاجئني بخلفية
+
+</button>
+
+<div id="gallery" class="container"></div>
+
+<a class="telegram"
+
+href="https://t.me/Anasorutb32">
+
+انضم لقناتنا على تيليجرام 🔗
+
+</a>
+
+<!-- Mockup -->
+
+<div id="mockup"
+
+class="mockup">
+<div class="phone">
+
+    <div class="screen">
+        <img id="wallpaper" class="wallpaper">
+    </div>
+
+    <img src="https://i.postimg.cc/ZY6gXk53/Chat-GPT-Image-Jul-13-2026-08-13-41-PM.png" class="frame">
+
+</div>
+<div class="mockup-buttons">
+
+<button
+
+id="download"
+
+class="downloadBtn">
+
+📥 تنزيل
+
+</button>
+
+<button
+
+id="close"
+
+class="closeBtn">
+
+✖ إغلاق
+
+</button>
+
+</div>
+
+</div>
 
 <script>
-    const imageUrls = [
+const imageUrls = [
         "https://i.postimg.cc/4x2wMGxg/1-(1).jpg", "https://i.postimg.cc/TwkQgX5Q/1-(2).jpg",
         "https://i.postimg.cc/PJpbDvkM/1-(3).jpg", "https://i.postimg.cc/k4ZK7MtW/1-(4).jpg",
         "https://i.postimg.cc/FKTjtwmR/1-(5).jpg", "https://i.postimg.cc/BZL2yhzM/1-(6).jpg",
@@ -381,133 +597,117 @@
 "https://i.postimg.cc/FzLyLxdv/Astros-Mix-(1).jpg",
 "https://i.postimg.cc/htSmDnr9/Astros-Mix-(2).jpg",
            ];
-    const gallery = document.getElementById('gallery');
 
-    // وظيفة لتحميل صورة واحدة
-    async function downloadImg(url, filename) {
-        try {
-            const res = await fetch(url);
-            const blob = await res.blob();
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        } catch(e) { 
-            // طريقة بديلة إذا فشل الـ Fetch بسبب السياسات الأمنية
-            window.open(url, '_blank');
-        }
+const gallery = document.getElementById("gallery");
+
+const mockup = document.getElementById("mockup");
+const wallpaper = document.getElementById("wallpaper");
+
+const closeBtn = document.getElementById("close");
+const downloadBtn = document.getElementById("download");
+
+let currentWallpaper = "";
+
+async function downloadImg(url, filename){
+
+    try{
+
+        const res = await fetch(url);
+
+        const blob = await res.blob();
+
+        const a = document.createElement("a");
+
+        a.href = URL.createObjectURL(blob);
+
+        a.download = filename;
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        document.body.removeChild(a);
+
+    }catch(e){
+
+        window.open(url,"_blank");
+
     }
 
-    // بناء الشبكة وتوليد الصور
-    imageUrls.forEach((url, index) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <img src="${url}" loading="lazy" alt="Wallpaper">
-            <button class="btn dl-single" onclick="downloadImg('${url}', 'Astros-Wall-${index+1}.jpg')">تنزيل 📥</button>
-        `;
-        gallery.appendChild(card);
-    });
+}
 
-    // وظيفة تحميل الكل
-    document.getElementById('downloadAll').onclick = () => {
-        imageUrls.forEach((url, index) => {
-            setTimeout(() => {
-                downloadImg(url, `Astros-Wall-${index+1}.jpg`);
-            }, index * 200); // تأخير بسيط لتجنب حظر المتصفح
-        });
-    };
-// ضعه في نهاية قسم السكريبت
-document.getElementById('surpriseBtn').onclick = () => {
+function openMockup(url){
 
-    const randomUrl =
-    imageUrls[Math.floor(Math.random() * imageUrls.length)];
+    currentWallpaper = url;
 
-    // الخلفية السوداء
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.background = 'rgba(0,0,0,0.95)';
-    overlay.style.display = 'flex';
-    overlay.style.flexDirection = 'column';
-    overlay.style.justifyContent = 'center';
-    overlay.style.alignItems = 'center';
-    overlay.style.zIndex = '99999';
-    overlay.style.padding = '20px';
+    wallpaper.src = url;
 
-    // الصورة
-    const img = document.createElement('img');
-    img.src = randomUrl;
-    img.style.maxWidth = '95%';
-    img.style.maxHeight = '80%';
-    img.style.borderRadius = '20px';
-    img.style.boxShadow = '0 0 40px #00aaff';
-    img.style.marginBottom = '20px';
+    mockup.style.display = "flex";
 
-    // زر التنزيل
-    const downloadBtn = document.createElement('button');
-    downloadBtn.innerText = '📥 تنزيل الخلفية';
-    downloadBtn.style.padding = '15px 30px';
-    downloadBtn.style.border = 'none';
-    downloadBtn.style.borderRadius = '15px';
-    downloadBtn.style.background =
-    'linear-gradient(45deg,#00aaff,#00ffcc)';
-    downloadBtn.style.color = '#000';
-    downloadBtn.style.fontSize = '18px';
-    downloadBtn.style.fontWeight = 'bold';
-    downloadBtn.style.cursor = 'pointer';
-    downloadBtn.style.boxShadow = '0 0 20px #00aaff';
-    downloadBtn.style.marginBottom = '15px';
+}
 
-    // التنزيل
-    downloadBtn.onclick = async (e) => {
-        e.stopPropagation();
+closeBtn.onclick = ()=>{
 
-        try {
-            const res = await fetch(randomUrl);
-            const blob = await res.blob();
+    mockup.style.display = "none";
 
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'Astros-Random-Wallpaper.jpg';
+};
 
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+downloadBtn.onclick = ()=>{
 
-        } catch(err) {
-            window.open(randomUrl, '_blank');
-        }
-    };
+    downloadImg(currentWallpaper,"Astros-Wallpaper.jpg");
 
-    // زر الإغلاق
-    const closeBtn = document.createElement('button');
-    closeBtn.innerText = '✖ إغلاق';
-    closeBtn.style.padding = '12px 25px';
-    closeBtn.style.border = 'none';
-    closeBtn.style.borderRadius = '12px';
-    closeBtn.style.background = '#ff0033';
-    closeBtn.style.color = 'white';
-    closeBtn.style.fontSize = '16px';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.boxShadow = '0 0 15px red';
+};
 
-    closeBtn.onclick = (e) => {
-        e.stopPropagation();
-        overlay.remove();
-    };
+mockup.onclick=(e)=>{
 
-    overlay.appendChild(img);
-    overlay.appendChild(downloadBtn);
-    overlay.appendChild(closeBtn);
+    if(e.target===mockup){
 
-    document.body.appendChild(overlay);
+        mockup.style.display="none";
+
+    }
+
+};
+
+imageUrls.forEach((url,index)=>{
+
+    const card=document.createElement("div");
+
+    card.className="card";
+
+    card.innerHTML=`
+
+    <img src="${url}" onclick="openMockup('${url}')">
+
+    <button class="btn preview"
+    onclick="openMockup('${url}')">
+
+    📱 معاينة
+
+    </button>
+
+    <button class="btn download"
+    onclick="downloadImg('${url}','Astros-${index+1}.jpg')">
+
+    📥 تنزيل
+
+    </button>
+
+    `;
+
+    gallery.appendChild(card);
+
+});
+
+document.getElementById("surpriseBtn").onclick=()=>{
+
+    const random=imageUrls[
+        Math.floor(Math.random()*imageUrls.length)
+    ];
+
+    openMockup(random);
+
 };
 </script>
+
 </body>
 </html>
